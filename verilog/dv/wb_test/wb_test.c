@@ -31,14 +31,161 @@ int clk = 0;
 
 int yonga_lz4_decoder_status;
 
-#define NUM_OF_INPUT_ELEMENTS 25
-#define NUM_OF_OUTPUT_ELEMENTS 32
+// #define NUM_OF_INPUT_ELEMENTS 21
+// #define NUM_OF_OUTPUT_ELEMENTS 12
+
+// #define NUM_OF_INPUT_ELEMENTS 34
+// #define NUM_OF_OUTPUT_ELEMENTS 39
+
+// #define NUM_OF_INPUT_ELEMENTS 24
+// #define NUM_OF_OUTPUT_ELEMENTS 31
+
+// #define NUM_OF_INPUT_ELEMENTS 24
+// #define NUM_OF_OUTPUT_ELEMENTS 30
+
+// #define NUM_OF_INPUT_ELEMENTS 25
+// #define NUM_OF_OUTPUT_ELEMENTS 75
+
+// #define NUM_OF_INPUT_ELEMENTS 49
+// #define NUM_OF_OUTPUT_ELEMENTS 44
+
+// #define NUM_OF_INPUT_ELEMENTS 35
+// #define NUM_OF_OUTPUT_ELEMENTS 30
 
 void read_yonga_lz4_decoder_status();
 
 void main()
 {
 
+	
+/* 
+//Example -1
+int yonga_lz4_decoder_test_seq[NUM_OF_INPUT_ELEMENTS];
+	yonga_lz4_decoder_test_seq[0] = 0x0d;
+	yonga_lz4_decoder_test_seq[1] = 0x00;
+	yonga_lz4_decoder_test_seq[2] = 0x00;
+	yonga_lz4_decoder_test_seq[3] = 0x10;
+	yonga_lz4_decoder_test_seq[4] = 0x80;
+	yonga_lz4_decoder_test_seq[5] = 0x61;
+	yonga_lz4_decoder_test_seq[6] = 0x62;
+	yonga_lz4_decoder_test_seq[7] = 0x63;
+	yonga_lz4_decoder_test_seq[8] = 0x64;
+	yonga_lz4_decoder_test_seq[9] = 0x61;
+	yonga_lz4_decoder_test_seq[10] = 0x62;
+	yonga_lz4_decoder_test_seq[11] = 0x63;
+	yonga_lz4_decoder_test_seq[12] = 0x64;
+	yonga_lz4_decoder_test_seq[13] = 0x61;
+	yonga_lz4_decoder_test_seq[14] = 0x62;
+	yonga_lz4_decoder_test_seq[15] = 0x63;
+	yonga_lz4_decoder_test_seq[16] = 0x64;
+	yonga_lz4_decoder_test_seq[17] = 0x0a;
+	yonga_lz4_decoder_test_seq[18] = 0x00;
+	yonga_lz4_decoder_test_seq[19] = 0x00;
+	yonga_lz4_decoder_test_seq[20] = 0x00;
+	yonga_lz4_decoder_test_seq[21] = 0x00;
+
+	int yonga_lz4_decoder_expected_result_seq[NUM_OF_OUTPUT_ELEMENTS];
+	yonga_lz4_decoder_expected_result_seq[0] = 0x61;
+	yonga_lz4_decoder_expected_result_seq[1] = 0x62;
+	yonga_lz4_decoder_expected_result_seq[2] = 0x63;
+	yonga_lz4_decoder_expected_result_seq[3] = 0x64;
+	yonga_lz4_decoder_expected_result_seq[4] = 0x61;
+	yonga_lz4_decoder_expected_result_seq[5] = 0x62;
+	yonga_lz4_decoder_expected_result_seq[6] = 0x63;
+	yonga_lz4_decoder_expected_result_seq[7] = 0x64;
+	yonga_lz4_decoder_expected_result_seq[8] = 0x61;
+	yonga_lz4_decoder_expected_result_seq[9] = 0x62;
+	yonga_lz4_decoder_expected_result_seq[10] = 0x63;
+	yonga_lz4_decoder_expected_result_seq[11] = 0x64;
+	yonga_lz4_decoder_expected_result_seq[12] = 0x0a;
+
+*/
+
+/* 
+//Example -2
+    int yonga_lz4_decoder_test_seq[NUM_OF_INPUT_ELEMENTS];
+	yonga_lz4_decoder_test_seq[0] = 0x1b;
+	yonga_lz4_decoder_test_seq[1] = 0x00;
+	yonga_lz4_decoder_test_seq[2] = 0x00;
+	yonga_lz4_decoder_test_seq[3] = 0x00;
+	yonga_lz4_decoder_test_seq[4] = 0xa3;
+	yonga_lz4_decoder_test_seq[5] = 0x46;
+	yonga_lz4_decoder_test_seq[6] = 0x43;
+	yonga_lz4_decoder_test_seq[7] = 0x44
+	yonga_lz4_decoder_test_seq[8] = 0x41;
+	yonga_lz4_decoder_test_seq[9] = 0x42;
+	yonga_lz4_decoder_test_seq[10] = 0x45;
+	yonga_lz4_decoder_test_seq[11] = 0x47;
+	yonga_lz4_decoder_test_seq[12] = 0x45;
+	yonga_lz4_decoder_test_seq[13] = 0x41;
+	yonga_lz4_decoder_test_seq[14] = 0x42;
+	yonga_lz4_decoder_test_seq[15] = 0x08;
+	yonga_lz4_decoder_test_seq[16] = 0x00;
+	yonga_lz4_decoder_test_seq[17] = 0x5c;
+	yonga_lz4_decoder_test_seq[18] = 0x46;
+	yonga_lz4_decoder_test_seq[19] = 0x43;
+	yonga_lz4_decoder_test_seq[20] = 0x44;	
+	yonga_lz4_decoder_test_seq[21] = 0x44;
+	yonga_lz4_decoder_test_seq[22] = 0x41;
+	yonga_lz4_decoder_test_seq[23] = 0x01;
+	yonga_lz4_decoder_test_seq[24] = 0x00;
+	yonga_lz4_decoder_test_seq[25] = 0x50;
+	yonga_lz4_decoder_test_seq[26] = 0x41;
+	yonga_lz4_decoder_test_seq[27] = 0x41;
+	yonga_lz4_decoder_test_seq[28] = 0x41;
+	yonga_lz4_decoder_test_seq[29] = 0x41;
+	yonga_lz4_decoder_test_seq[30] = 0x0a;
+	yonga_lz4_decoder_test_seq[31] = 0x00;
+	yonga_lz4_decoder_test_seq[32] = 0x00;
+	yonga_lz4_decoder_test_seq[33] = 0x00;
+	yonga_lz4_decoder_test_seq[34] = 0x00;
+	
+	int yonga_lz4_decoder_expected_result_seq[NUM_OF_OUTPUT_ELEMENTS];
+	yonga_lz4_decoder_expected_result_seq[0] = 0x46;
+	yonga_lz4_decoder_expected_result_seq[1] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[2] = 0x44;
+	yonga_lz4_decoder_expected_result_seq[3] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[4] = 0x42;
+	yonga_lz4_decoder_expected_result_seq[5] = 0x45;
+	yonga_lz4_decoder_expected_result_seq[6] = 0x47;
+	yonga_lz4_decoder_expected_result_seq[7] = 0x45;
+	yonga_lz4_decoder_expected_result_seq[8] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[9] = 0x42;	
+	yonga_lz4_decoder_expected_result_seq[10] = 0x44;
+	yonga_lz4_decoder_expected_result_seq[11] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[12] = 0x42;
+	yonga_lz4_decoder_expected_result_seq[13] = 0x45;
+	yonga_lz4_decoder_expected_result_seq[14] = 0x47;
+	yonga_lz4_decoder_expected_result_seq[15] = 0x45;
+	yonga_lz4_decoder_expected_result_seq[16] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[17] = 0x42;		
+	yonga_lz4_decoder_expected_result_seq[18] = 0x46;
+	yonga_lz4_decoder_expected_result_seq[19] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[20] = 0x44;
+	yonga_lz4_decoder_expected_result_seq[21] = 0x44;
+	yonga_lz4_decoder_expected_result_seq[22] = 0x41;	
+	yonga_lz4_decoder_expected_result_seq[23] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[24] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[25] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[26] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[27] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[28] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[29] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[30] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[31] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[32] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[33] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[34] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[35] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[36] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[37] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[38] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[39] = 0x0a;	
+*/
+
+
+/* 
+//Example -3
 	int yonga_lz4_decoder_test_seq[NUM_OF_INPUT_ELEMENTS];
 	yonga_lz4_decoder_test_seq[0] = 0x11;
 	yonga_lz4_decoder_test_seq[1] = 0x00;
@@ -78,7 +225,7 @@ void main()
 	yonga_lz4_decoder_expected_result_seq[8] = 0x41;
 	yonga_lz4_decoder_expected_result_seq[9] = 0x42;
 	yonga_lz4_decoder_expected_result_seq[10] = 0x43;
-	yonga_lz4_decoder_expected_result_seq[11] = 0x44;
+	yonga_lz4_decoder_expected_result_seq[11] = 0x44;	
 	yonga_lz4_decoder_expected_result_seq[12] = 0x43;
 	yonga_lz4_decoder_expected_result_seq[13] = 0x43;
 	yonga_lz4_decoder_expected_result_seq[14] = 0x43;
@@ -97,8 +244,354 @@ void main()
 	yonga_lz4_decoder_expected_result_seq[27] = 0x43;
 	yonga_lz4_decoder_expected_result_seq[28] = 0x43;
 	yonga_lz4_decoder_expected_result_seq[29] = 0x43;
-	yonga_lz4_decoder_expected_result_seq[30] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[30] = 0x43;	
 	yonga_lz4_decoder_expected_result_seq[31] = 0x0a;
+*/
+
+/* 
+//Example -4
+	int yonga_lz4_decoder_test_seq[NUM_OF_INPUT_ELEMENTS];
+	yonga_lz4_decoder_test_seq[0] = 0x11;
+	yonga_lz4_decoder_test_seq[1] = 0x00;
+	yonga_lz4_decoder_test_seq[2] = 0x00;
+	yonga_lz4_decoder_test_seq[3] = 0x00;
+	yonga_lz4_decoder_test_seq[4] = 0x42;
+	yonga_lz4_decoder_test_seq[5] = 0x41;
+	yonga_lz4_decoder_test_seq[6] = 0x42;
+	yonga_lz4_decoder_test_seq[7] = 0x43;
+	yonga_lz4_decoder_test_seq[8] = 0x44;
+	yonga_lz4_decoder_test_seq[9] = 0x03;
+	yonga_lz4_decoder_test_seq[10] = 0x00;
+	yonga_lz4_decoder_test_seq[11] = 0x1a;
+	yonga_lz4_decoder_test_seq[12] = 0x43;
+	yonga_lz4_decoder_test_seq[13] = 0x01;
+	yonga_lz4_decoder_test_seq[14] = 0x00;
+	yonga_lz4_decoder_test_seq[15] = 0x50;
+	yonga_lz4_decoder_test_seq[16] = 0x43;
+	yonga_lz4_decoder_test_seq[17] = 0x43;
+	yonga_lz4_decoder_test_seq[18] = 0x43;
+	yonga_lz4_decoder_test_seq[19] = 0x43;
+	yonga_lz4_decoder_test_seq[20] = 0x0a;
+	yonga_lz4_decoder_test_seq[21] = 0x00;
+	yonga_lz4_decoder_test_seq[22] = 0x00;
+	yonga_lz4_decoder_test_seq[23] = 0x00;
+	yonga_lz4_decoder_test_seq[24] = 0x00;
+
+	int yonga_lz4_decoder_expected_result_seq[NUM_OF_OUTPUT_ELEMENTS];
+	yonga_lz4_decoder_expected_result_seq[0] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[1] = 0x42;
+	yonga_lz4_decoder_expected_result_seq[2] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[3] = 0x44;
+	yonga_lz4_decoder_expected_result_seq[5] = 0x42;
+	yonga_lz4_decoder_expected_result_seq[6] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[7] = 0x44;
+	yonga_lz4_decoder_expected_result_seq[8] = 0x42;
+	yonga_lz4_decoder_expected_result_seq[9] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[10] = 0x44;
+	yonga_lz4_decoder_expected_result_seq[11] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[12] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[13] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[14] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[15] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[16] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[17] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[18] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[19] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[20] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[21] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[22] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[23] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[24] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[25] = 0x43;	
+	yonga_lz4_decoder_expected_result_seq[26] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[27] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[28] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[29] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[30] = 0x0a;
+*/
+
+
+/* 
+//Example -5
+    int yonga_lz4_decoder_test_seq[NUM_OF_INPUT_ELEMENTS];
+	yonga_lz4_decoder_test_seq[0] = 0x12;
+	yonga_lz4_decoder_test_seq[1] = 0x00;
+	yonga_lz4_decoder_test_seq[2] = 0x00;
+	yonga_lz4_decoder_test_seq[3] = 0x00;
+	yonga_lz4_decoder_test_seq[4] = 0x42;
+	yonga_lz4_decoder_test_seq[5] = 0x41;
+	yonga_lz4_decoder_test_seq[6] = 0x42;
+	yonga_lz4_decoder_test_seq[7] = 0x43;
+	yonga_lz4_decoder_test_seq[8] = 0x44;
+	yonga_lz4_decoder_test_seq[9] = 0x03;
+	yonga_lz4_decoder_test_seq[10] = 0x00;
+	yonga_lz4_decoder_test_seq[11] = 0x1f;
+	yonga_lz4_decoder_test_seq[12] = 0x43;
+	yonga_lz4_decoder_test_seq[13] = 0x01;
+	yonga_lz4_decoder_test_seq[14] = 0x00;
+	yonga_lz4_decoder_test_seq[15] = 0x28;	
+	yonga_lz4_decoder_test_seq[16] = 0x50;
+	yonga_lz4_decoder_test_seq[17] = 0x43;
+	yonga_lz4_decoder_test_seq[18] = 0x43;
+	yonga_lz4_decoder_test_seq[19] = 0x43;
+	yonga_lz4_decoder_test_seq[20] = 0x43;
+	yonga_lz4_decoder_test_seq[21] = 0x0a;
+	yonga_lz4_decoder_test_seq[22] = 0x00;
+	yonga_lz4_decoder_test_seq[23] = 0x00;
+	yonga_lz4_decoder_test_seq[24] = 0x00;
+	yonga_lz4_decoder_test_seq[25] = 0x00;
+
+	int yonga_lz4_decoder_expected_result_seq[NUM_OF_OUTPUT_ELEMENTS];
+	yonga_lz4_decoder_expected_result_seq[0] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[1] = 0x42;
+	yonga_lz4_decoder_expected_result_seq[2] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[3] = 0x44;
+	yonga_lz4_decoder_expected_result_seq[5] = 0x42;
+	yonga_lz4_decoder_expected_result_seq[6] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[7] = 0x44;
+	yonga_lz4_decoder_expected_result_seq[8] = 0x42;
+	yonga_lz4_decoder_expected_result_seq[9] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[10] = 0x44;	
+	yonga_lz4_decoder_expected_result_seq[11] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[12] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[13] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[14] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[15] = 0x43;	
+	yonga_lz4_decoder_expected_result_seq[16] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[17] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[18] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[19] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[20] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[21] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[22] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[23] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[24] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[25] = 0x43;	
+	yonga_lz4_decoder_expected_result_seq[26] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[27] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[28] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[29] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[30] = 0x43;	
+	yonga_lz4_decoder_expected_result_seq[31] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[32] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[33] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[34] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[35] = 0x43;	
+	yonga_lz4_decoder_expected_result_seq[36] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[37] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[38] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[39] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[40] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[41] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[42] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[43] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[44] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[45] = 0x43;	
+	yonga_lz4_decoder_expected_result_seq[46] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[47] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[48] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[49] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[50] = 0x43;	
+	yonga_lz4_decoder_expected_result_seq[51] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[52] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[53] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[54] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[55] = 0x43;	
+	yonga_lz4_decoder_expected_result_seq[56] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[57] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[58] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[59] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[60] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[61] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[62] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[63] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[64] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[65] = 0x43;	
+	yonga_lz4_decoder_expected_result_seq[66] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[67] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[68] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[69] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[70] = 0x43;	
+	yonga_lz4_decoder_expected_result_seq[71] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[72] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[73] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[74] = 0x43;	
+	yonga_lz4_decoder_expected_result_seq[75] = 0x0a;
+*/
+
+/* 
+//Example -6
+    int yonga_lz4_decoder_test_seq[NUM_OF_INPUT_ELEMENTS];
+	yonga_lz4_decoder_test_seq[0] = 0x2a;
+	yonga_lz4_decoder_test_seq[1] = 0x00;
+	yonga_lz4_decoder_test_seq[2] = 0x00;
+	yonga_lz4_decoder_test_seq[3] = 0x00;	
+	yonga_lz4_decoder_test_seq[4] = 0xf4;
+	yonga_lz4_decoder_test_seq[5] = 0x03;	
+	yonga_lz4_decoder_test_seq[6] = 0x41;
+	yonga_lz4_decoder_test_seq[7] = 0x42;
+	yonga_lz4_decoder_test_seq[8] = 0x43;	
+	yonga_lz4_decoder_test_seq[9] = 0x44;
+	yonga_lz4_decoder_test_seq[10] = 0x45;
+	yonga_lz4_decoder_test_seq[11] = 0x46;
+	yonga_lz4_decoder_test_seq[12] = 0x47;
+	yonga_lz4_decoder_test_seq[13] = 0x48;
+	yonga_lz4_decoder_test_seq[14] = 0x49;
+	yonga_lz4_decoder_test_seq[15] = 0x4a;	
+	yonga_lz4_decoder_test_seq[16] = 0x4b;
+	yonga_lz4_decoder_test_seq[17] = 0x4c;
+	yonga_lz4_decoder_test_seq[18] = 0x4d;
+	yonga_lz4_decoder_test_seq[19] = 0x4e;
+	yonga_lz4_decoder_test_seq[20] = 0x4f;
+	yonga_lz4_decoder_test_seq[21] = 0x50;
+	yonga_lz4_decoder_test_seq[22] = 0x52;
+	yonga_lz4_decoder_test_seq[23] = 0x53;	
+	yonga_lz4_decoder_test_seq[24] = 0x11;
+	yonga_lz4_decoder_test_seq[25] = 0x00;
+	yonga_lz4_decoder_test_seq[26] = 0xf0;
+	yonga_lz4_decoder_test_seq[27] = 0x03;	
+	yonga_lz4_decoder_test_seq[28] = 0x41;
+	yonga_lz4_decoder_test_seq[29] = 0x42;
+	yonga_lz4_decoder_test_seq[30] = 0x43;	
+	yonga_lz4_decoder_test_seq[31] = 0x41;
+	yonga_lz4_decoder_test_seq[32] = 0x42;
+	yonga_lz4_decoder_test_seq[33] = 0x43;
+	yonga_lz4_decoder_test_seq[34] = 0x58;
+	yonga_lz4_decoder_test_seq[35] = 0x59;
+	yonga_lz4_decoder_test_seq[36] = 0x5a;
+	yonga_lz4_decoder_test_seq[37] = 0x5a;	
+	yonga_lz4_decoder_test_seq[38] = 0x5a;
+	yonga_lz4_decoder_test_seq[39] = 0x5a;
+	yonga_lz4_decoder_test_seq[40] = 0x5a;	
+	yonga_lz4_decoder_test_seq[41] = 0x5a;
+	yonga_lz4_decoder_test_seq[42] = 0x5a;
+	yonga_lz4_decoder_test_seq[43] = 0x5a;	
+	yonga_lz4_decoder_test_seq[44] = 0x5a;
+	yonga_lz4_decoder_test_seq[45] = 0x0a;
+	yonga_lz4_decoder_test_seq[46] = 0x00;
+	yonga_lz4_decoder_test_seq[47] = 0x00;
+	yonga_lz4_decoder_test_seq[48] = 0x00;
+	yonga_lz4_decoder_test_seq[49] = 0x00;
+	
+	int yonga_lz4_decoder_expected_result_seq[NUM_OF_OUTPUT_ELEMENTS];
+	yonga_lz4_decoder_expected_result_seq[0] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[1] = 0x42;
+	yonga_lz4_decoder_expected_result_seq[2] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[3] = 0x44;
+	yonga_lz4_decoder_expected_result_seq[5] = 0x45;
+	yonga_lz4_decoder_expected_result_seq[6] = 0x46;
+	yonga_lz4_decoder_expected_result_seq[7] = 0x47;
+	yonga_lz4_decoder_expected_result_seq[8] = 0x48;
+	yonga_lz4_decoder_expected_result_seq[9] = 0x49;
+	yonga_lz4_decoder_expected_result_seq[10] = 0x4a;	
+	yonga_lz4_decoder_expected_result_seq[11] = 0x4b;
+	yonga_lz4_decoder_expected_result_seq[12] = 0x4c;
+	yonga_lz4_decoder_expected_result_seq[13] = 0x4d;
+	yonga_lz4_decoder_expected_result_seq[14] = 0x4e;
+	yonga_lz4_decoder_expected_result_seq[15] = 0x4f;	
+	yonga_lz4_decoder_expected_result_seq[16] = 0x50;
+	yonga_lz4_decoder_expected_result_seq[17] = 0x52;
+	yonga_lz4_decoder_expected_result_seq[18] = 0x53;	
+	yonga_lz4_decoder_expected_result_seq[19] = 0x42;
+	yonga_lz4_decoder_expected_result_seq[20] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[21] = 0x44;
+	yonga_lz4_decoder_expected_result_seq[22] = 0x45;
+	yonga_lz4_decoder_expected_result_seq[23] = 0x46;
+	yonga_lz4_decoder_expected_result_seq[24] = 0x47;
+	yonga_lz4_decoder_expected_result_seq[25] = 0x48;	
+	yonga_lz4_decoder_expected_result_seq[26] = 0x49;	
+	yonga_lz4_decoder_expected_result_seq[27] = 0x41;
+	yonga_lz4_decoder_expected_result_seq[28] = 0x42;
+	yonga_lz4_decoder_expected_result_seq[29] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[30] = 0x41;	
+	yonga_lz4_decoder_expected_result_seq[31] = 0x42;
+	yonga_lz4_decoder_expected_result_seq[32] = 0x43;
+	yonga_lz4_decoder_expected_result_seq[33] = 0x58;
+	yonga_lz4_decoder_expected_result_seq[34] = 0x59;
+	yonga_lz4_decoder_expected_result_seq[35] = 0x5a;	
+	yonga_lz4_decoder_expected_result_seq[36] = 0x5a;
+	yonga_lz4_decoder_expected_result_seq[37] = 0x5a;
+	yonga_lz4_decoder_expected_result_seq[38] = 0x5a;
+	yonga_lz4_decoder_expected_result_seq[39] = 0x5a;
+	yonga_lz4_decoder_expected_result_seq[40] = 0x5a;
+	yonga_lz4_decoder_expected_result_seq[41] = 0x5a;
+	yonga_lz4_decoder_expected_result_seq[42] = 0x5a;
+	yonga_lz4_decoder_expected_result_seq[43] = 0x5a;
+	yonga_lz4_decoder_expected_result_seq[44] = 0x0a;
+*/
+
+/* 
+//Example -7
+    int yonga_lz4_decoder_test_seq[NUM_OF_INPUT_ELEMENTS];
+	yonga_lz4_decoder_test_seq[0] = 0x1c;
+	yonga_lz4_decoder_test_seq[1] = 0x00;
+	yonga_lz4_decoder_test_seq[2] = 0x00;
+	yonga_lz4_decoder_test_seq[3] = 0x00;	
+	yonga_lz4_decoder_test_seq[4] = 0x60;	
+	yonga_lz4_decoder_test_seq[5] = 0x61;	
+	yonga_lz4_decoder_test_seq[6] = 0x62;
+	yonga_lz4_decoder_test_seq[7] = 0x63;
+	yonga_lz4_decoder_test_seq[8] = 0x64;	
+	yonga_lz4_decoder_test_seq[9] = 0x65;
+	yonga_lz4_decoder_test_seq[10] = 0x5f;	
+	yonga_lz4_decoder_test_seq[11] = 0x05;
+	yonga_lz4_decoder_test_seq[12] = 0x00;	
+	yonga_lz4_decoder_test_seq[13] = 0x41;	
+	yonga_lz4_decoder_test_seq[14] = 0x66;
+	yonga_lz4_decoder_test_seq[15] = 0x67;	
+	yonga_lz4_decoder_test_seq[16] = 0x68;
+	yonga_lz4_decoder_test_seq[17] = 0x5f;
+	yonga_lz4_decoder_test_seq[18] = 0x0e;
+	yonga_lz4_decoder_test_seq[19] = 0x00;
+	yonga_lz4_decoder_test_seq[20] = 0xb0;	
+	yonga_lz4_decoder_test_seq[21] = 0x66;
+	yonga_lz4_decoder_test_seq[22] = 0x67;
+	yonga_lz4_decoder_test_seq[23] = 0x68;	
+	yonga_lz4_decoder_test_seq[24] = 0x78;
+	yonga_lz4_decoder_test_seq[25] = 0x78;
+	yonga_lz4_decoder_test_seq[26] = 0x78;
+	yonga_lz4_decoder_test_seq[27] = 0x78;	
+	yonga_lz4_decoder_test_seq[28] = 0x78;
+	yonga_lz4_decoder_test_seq[29] = 0x78;
+	yonga_lz4_decoder_test_seq[30] = 0x78;	
+	yonga_lz4_decoder_test_seq[31] = 0x0a;
+	yonga_lz4_decoder_test_seq[32] = 0x00;
+	yonga_lz4_decoder_test_seq[33] = 0x00;
+	yonga_lz4_decoder_test_seq[34] = 0x00;
+	yonga_lz4_decoder_test_seq[35] = 0x00;
+	
+	int yonga_lz4_decoder_expected_result_seq[NUM_OF_OUTPUT_ELEMENTS];
+	yonga_lz4_decoder_expected_result_seq[0] = 0x61;
+	yonga_lz4_decoder_expected_result_seq[1] = 0x62;
+	yonga_lz4_decoder_expected_result_seq[2] = 0x63;
+	yonga_lz4_decoder_expected_result_seq[3] = 0x64;
+	yonga_lz4_decoder_expected_result_seq[5] = 0x65;
+	yonga_lz4_decoder_expected_result_seq[6] = 0x5f;	
+	yonga_lz4_decoder_expected_result_seq[7] = 0x62;
+	yonga_lz4_decoder_expected_result_seq[8] = 0x63;
+	yonga_lz4_decoder_expected_result_seq[9] = 0x64;
+	yonga_lz4_decoder_expected_result_seq[10] = 0x65;	
+	yonga_lz4_decoder_expected_result_seq[11] = 0x66;
+	yonga_lz4_decoder_expected_result_seq[12] = 0x67;
+	yonga_lz4_decoder_expected_result_seq[13] = 0x68;
+	yonga_lz4_decoder_expected_result_seq[14] = 0x5f;	
+	yonga_lz4_decoder_expected_result_seq[15] = 0x61;	
+	yonga_lz4_decoder_expected_result_seq[16] = 0x62;
+	yonga_lz4_decoder_expected_result_seq[17] = 0x63;
+	yonga_lz4_decoder_expected_result_seq[18] = 0x64;	
+	yonga_lz4_decoder_expected_result_seq[19] = 0x65;	
+	yonga_lz4_decoder_expected_result_seq[20] = 0x66;
+	yonga_lz4_decoder_expected_result_seq[21] = 0x67;
+	yonga_lz4_decoder_expected_result_seq[22] = 0x68;
+	yonga_lz4_decoder_expected_result_seq[23] = 0x78;
+	yonga_lz4_decoder_expected_result_seq[24] = 0x78;
+	yonga_lz4_decoder_expected_result_seq[25] = 0x78;	
+	yonga_lz4_decoder_expected_result_seq[26] = 0x78;	
+	yonga_lz4_decoder_expected_result_seq[27] = 0x78;
+	yonga_lz4_decoder_expected_result_seq[28] = 0x78;
+	yonga_lz4_decoder_expected_result_seq[29] = 0x78;
+	yonga_lz4_decoder_expected_result_seq[30] = 0x0a;	
+*/
 
 	int yonga_lz4_decoder_actual_result_seq[NUM_OF_OUTPUT_ELEMENTS];
 
